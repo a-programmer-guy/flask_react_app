@@ -1,0 +1,29 @@
+Steps taken for project:
+1.) Set up Ubuntu 20.04
+
+2.) Made docker install script
+	PATH: ~/Desktop/projectx/docker/docker_install.sh
+	***make sure script has execute (chmod 744 docker_install.sh)***
+
+3.) Run script to install Docker: 
+	$ sudo install_docker.sh
+
+4.) Test install by running hello world image:
+	$ sudo docker run hello-world
+
+5.) Installed NGINX:
+    sudo apt update
+    sudo apt install nginx
+
+6.) Adjust Firewall: 
+	sudo ufw app list (list app configs that ufw can work with)
+	sudo ufw allow 'Nginx HTTP' (opens port 80 for traffic)
+	systemctl status nginx (check if service is running)
+
+7.) Install Node and NPM:
+	sudo apt-get install nodejs npm
+
+8.) Fix permissions with npm 
+
+8.) Install Yarn using NPM:
+	npm install -g yarn
