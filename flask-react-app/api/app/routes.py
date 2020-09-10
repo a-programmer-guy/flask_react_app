@@ -1,5 +1,5 @@
 import time
-from api import app
+from app import app
 
 @app.route('/time')
 def get_current_time():
