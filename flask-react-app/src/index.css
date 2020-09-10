@@ -12,3 +12,27 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+  padding-top: 56px;
+  position: relative;
+  min-height: calc(100vh - 2.5rem); /* Minus height of footer */
+}
+
+/* Adjust for mobile/smaller screen
+@media screen and (max-width: 554px) {
+  .container { padding-top: 80px; }
+} */
+
+.footer {
+  position: absolute;
+  bottom:0;
+  display:block;
+  height: 2.5rem;
+}
+
+.splash_content {
+  background-color: lightgrey;
+  text-align: center;
+  padding: 25px;
+}
