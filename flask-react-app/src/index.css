@@ -32,7 +32,25 @@ body {
 }
 
 .splash_content {
-  background-color: lightgrey;
+  background-image: linear-gradient(to bottom right, #0093E9, #80D0C7);
+  padding: 100px;
+  margin-top: 5em;
+  border-radius: 25px;
+}
+
+#rounded {
+  border-radius: 25px;
+  border: 2px solid #3366ff;
+
+  padding: 20px;
+}
+
+.white {
+  color: white;
   text-align: center;
-  padding: 25px;
+  font-family: 'Raleway', sans-serif;
+}
+.sign_in {
+  background-image: linear-gradient(to bottom right, #3778ad, #617ef2);
+  border: 1px solid #3366ff !important;
 }

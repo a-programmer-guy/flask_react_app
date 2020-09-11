@@ -7,7 +7,7 @@ export class Footer extends Component {
             <div>
                 <Navbar bg="dark" variant="dark" className='footer'>
                     <Nav className="m-auto">
-                        <Nav.Item>Copyright</Nav.Item>
+                        <Nav.Item className='mr-2'>&copy;</Nav.Item>
                         <Nav.Item>Kaylan Horne</Nav.Item>
                     </Nav>
                 </Navbar>

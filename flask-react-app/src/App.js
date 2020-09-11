@@ -19,7 +19,7 @@ function App() {
       <ThemeContextProvider>
       <Navigation />
         <Container>
-          <Clock />
+          {/* <Clock /> */}
           <SplashPage />
         </Container>
         <Footer />
