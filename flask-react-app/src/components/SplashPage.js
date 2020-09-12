@@ -19,6 +19,7 @@ class SplashPage extends Component {
     parseJSON(response) {
         return response.json()
     }
+
     handleSubmit = (e) => {
         e.preventDefault();
         var ebody = JSON.stringify({

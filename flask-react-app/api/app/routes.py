@@ -8,3 +8,7 @@ def sign_in():
     email = data['email']
     password = data['password']
     return jsonify(email,password)
+
+def sign_up():
+    data = request.get_json()
+    return jsonify(data), 201

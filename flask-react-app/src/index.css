@@ -6,7 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+@font-face { font-family: lacosta; src: url('./Fonts/lacosta/Lacosta_PERSONAL_USE_ONLY.ttf'); }
+@font-face { font-family: samosan; src: url('./Fonts/samosan/samosan.ttf'); }
+@font-face { font-family: nixie; src: url('./Fonts/nixie_one/NixieOne.ttf'); }
 * {
   margin: 0;
   padding: 0;
@@ -41,8 +43,13 @@ body {
 #rounded {
   border-radius: 25px;
   border: 2px solid #3366ff;
-
   padding: 20px;
+}
+
+#rounded_button {
+  border-radius: 25px;
+  border: 2px solid #3366ff;
+  padding: 8px;
 }
 
 .white {
@@ -53,4 +60,16 @@ body {
 .sign_in {
   background-image: linear-gradient(to bottom right, #3778ad, #617ef2);
   border: 1px solid #3366ff !important;
+}
+
+#sign_in_title {
+  font-family: nixie, sans-serif;
+  font-size: 88px;
+}
+
+#sign_in_label {
+  margin-top: 1.5em;
+  font-family: nixie, sans-serif;
+  color: white;
+  font-weight: 1000;
 }
