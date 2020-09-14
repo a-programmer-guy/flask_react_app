@@ -26,7 +26,7 @@ class SplashPage extends Component {
             email: this.state.email,
             password: this.state.password
         })
-        fetch('/sign_in', {
+        fetch('/login', {
             method: 'POST',
             headers:{ 'Content-Type': 'application/json'},
             body: ebody})
@@ -43,14 +43,14 @@ class SplashPage extends Component {
             <div>
                 <div className='splash_content'>
                     <h1 className='mx-auto mb-4 white' >Sign In</h1>
-                    <Row lg={8}>
+                    <Row>
                         <Col>
                             <Form onSubmit={this.handleSubmit}>
                                 <Form.Group>
                                     <Form.Control
                                         type="email"
                                         placeholder="Enter email"
-                                        id='rounded'
+                                        id='rounded_input'
                                         name='email'
                                         value={this.state.email}
                                         onChange={this.handleChange}
@@ -63,7 +63,7 @@ class SplashPage extends Component {
                                     <Form.Control
                                         type="password"
                                         placeholder="Password"
-                                        id='rounded'
+                                        id='rounded_input'
                                         name='password'
                                         value={this.state.password}
                                         onChange={this.handleChange} />

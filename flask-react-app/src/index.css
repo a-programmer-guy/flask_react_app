@@ -10,15 +10,27 @@ body {
 @font-face { font-family: samosan; src: url('./Fonts/samosan/samosan.ttf'); }
 @font-face { font-family: nixie; src: url('./Fonts/nixie_one/NixieOne.ttf'); }
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
-
+.container-fluid{
+  padding: 0px !important;
+  margin-top: 56px; /* Allow for header height */
+}
 .container {
-  padding-top: 56px;
+  margin-top: 56px;
   position: relative;
-  min-height: calc(100vh - 2.5rem); /* Minus height of footer */
+  min-height: calc(100vh - 2.5rem); /*Minus height of footer*/
+}
+.content_wrapper {
+  background-image: linear-gradient(to bottom right, #0093E9, #80D0C7);
+  margin: auto;
+  padding: 100px;
+}
+.splash_content {
+  padding: 25px;
+  border-radius: 25px;
+  background-color: white;
+  margin: auto;
 }
 
 /* Adjust for mobile/smaller screen
@@ -33,23 +45,10 @@ body {
   height: 2.5rem;
 }
 
-.splash_content {
-  background-image: linear-gradient(to bottom right, #0093E9, #80D0C7);
-  padding: 100px;
-  margin-top: 5em;
-  border-radius: 25px;
-}
-
-#rounded {
+#rounded_input {
   border-radius: 25px;
   border: 2px solid #3366ff;
   padding: 20px;
-}
-
-#rounded_button {
-  border-radius: 25px;
-  border: 2px solid #3366ff;
-  padding: 8px;
 }
 
 .white {
@@ -57,19 +56,28 @@ body {
   text-align: center;
   font-family: 'Raleway', sans-serif;
 }
-.sign_in {
+.sign_in_button {
   background-image: linear-gradient(to bottom right, #3778ad, #617ef2);
-  border: 1px solid #3366ff !important;
+  border: 1px solid #3366ff;
+  border-radius: 25px;
+  font-family: samosan, sans-serif;
 }
 
 #sign_in_title {
   font-family: nixie, sans-serif;
   font-size: 88px;
+  background: linear-gradient(to bottom right, #0093E9, #80D0C7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #sign_in_label {
   margin-top: 1.5em;
-  font-family: nixie, sans-serif;
-  color: white;
-  font-weight: 1000;
+  color: #3366ff;
 }
+
+#rounded_select {
+  border-radius: 25px;
+  border: 2px solid #3366ff;
+}
+

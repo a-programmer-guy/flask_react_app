@@ -3,7 +3,7 @@ import React from 'react';
 
 // Components
 import Navigation from './components/Navbar'
-import Clock from './components/Clock'
+// import Clock from './components/Clock'
 import SplashPage from './components/SplashPage';
 import Footer from './components/Footer';
 import SignUp from './components/SignUp'
@@ -19,8 +19,7 @@ function App() {
     <div className="App">
       <ThemeContextProvider>
       <Navigation />
-        <Container>
-          {/* <Clock /> */}
+        <Container fluid>
           <SignUp />
           <SplashPage />
         </Container>
