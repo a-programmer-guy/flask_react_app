@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Form, Button, Nav, FormControl } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 
 export class Navigation extends Component {
@@ -10,7 +10,7 @@ export class Navigation extends Component {
         return (
             <div>
                 <Navbar bg="dark" variant="dark" fixed='top' expand="sm">
-                    <Navbar.Brand href="#home">Dope Dash</Navbar.Brand>
+                    <Navbar.Brand href="#home">DD</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
