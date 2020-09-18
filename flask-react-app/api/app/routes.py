@@ -4,6 +4,8 @@ from flask import request, jsonify
 from app.models import User, UserSchema, user_schema, users_schema #delete?
 from sqlalchemy.exc import IntegrityError
 from app.dao.user_dao import UserRegistration
+from werkzeug.utils import secure_filename
+import os
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -35,3 +37,17 @@ def get_user():
     data = request.get_json()
     # email = data['email']
     return jsonify(user)
+
+@app.route('/upload', methods=['GET', 'POST'])
+
+# def allowed_file(filename):
+#     return '.' in filename and filename.rsplit('. ',1)[1].lower() in ALLOWED_EXTENTIONS
+
+def upload_file():
+    # if 'file' not in request.files:
+    #     return 400
+    file_data = request.files['file']
+    filename = secure_filename(file_data.filename)
+    if filename!= '':
+            file_data.save(os.path.join(app.config['UPLOAD_PATH'],file_data.filename))
+    return jsonify(file_data.filename)

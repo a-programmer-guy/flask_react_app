@@ -61,20 +61,20 @@ class SignUp extends Component {
                     <h1 className='mx-auto mb-4 white' id='sign_in_title'>Sign Up</h1>
                     <Row>
                         <Col>
-                            <Form onSubmit={this.handleSubmit}>
+                            <Form onSubmit={this.handleSubmit} className='sign_up_form'>
                             <Form.Label id='sign_in_label'>Name</Form.Label>
                                 <Row xs={1} md={1} lg={2}>
                                     <Col>
-                                        <Form.Control type="text" name='first_name' placeholder="First" id='rounded_input' onChange={this.handleChange}/>
+                                        <Form.Control type="text" name='z' placeholder="First" onChange={this.handleChange}/>
                                     </Col>
                                     <Col>
-                                        <Form.Control type="text" name='last_name' placeholder="Last" id='rounded_input' onChange={this.handleChange}/>
+                                        <Form.Control type="text" name='last_name' placeholder="Last" onChange={this.handleChange}/>
                                     </Col>
                                 </Row>
                                 <Row xs={1} md={1} lg={2}>
                                     <Col>
                                     <Form.Label id='sign_in_label'>Birthdate</Form.Label>
-                                        <Form.Control type="text" name='dob' placeholder="YYYY-MM-DD (e.g. 1999-12-31)" id='rounded_input'/>
+                                        <Form.Control type="text" name='dob' placeholder="YYYY-MM-DD (e.g. 1999-12-31)"/>
                                     </Col>
                                     <Col>
                                     <Form.Label id='sign_in_label'>Gender</Form.Label>
@@ -93,7 +93,6 @@ class SignUp extends Component {
                                         <Form.Control
                                             type="email"
                                             placeholder="123example@example.com"
-                                            id='rounded_input'
                                             name='email'
                                             value={this.state.email}
                                             onChange={this.handleChange}
@@ -109,7 +108,6 @@ class SignUp extends Component {
                                         <Form.Control
                                         type="password"
                                         placeholder="Must be minimum of 8 alphanumberic characters"
-                                        id='rounded_input'
                                         name='password'
                                         value={this.state.password}
                                         onChange={this.handleChange}
@@ -121,7 +119,6 @@ class SignUp extends Component {
                                         <Form.Control
                                         type="password"
                                         placeholder="Confirm password"
-                                        id='rounded_input'
                                         name='password'
                                         value={this.state.password}
                                         onChange={this.handleChange}

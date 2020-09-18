@@ -7,6 +7,7 @@ import Navigation from './components/Navbar'
 import SplashPage from './components/SplashPage';
 import Footer from './components/Footer';
 import SignUp from './components/SignUp'
+import UploadImage from './components/UploadImage'
 
 // Contexts
 import ThemeContextProvider from './contexts/ThemeContext';
@@ -21,6 +22,7 @@ function App() {
       <Navigation />
         <Container fluid>
           <SignUp />
+          <UploadImage />
           <SplashPage />
         </Container>
         <Footer />

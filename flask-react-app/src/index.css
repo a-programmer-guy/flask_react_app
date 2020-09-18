@@ -45,7 +45,7 @@ body {
   height: 2.5rem;
 }
 
-#rounded_input {
+.sign_up_form, .sign_up_form input{
   border-radius: 25px;
   border: 2px solid #3366ff;
   padding: 20px;

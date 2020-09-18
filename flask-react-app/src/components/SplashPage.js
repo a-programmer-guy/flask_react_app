@@ -45,12 +45,11 @@ class SplashPage extends Component {
                     <h1 className='mx-auto mb-4 white' >Sign In</h1>
                     <Row>
                         <Col>
-                            <Form onSubmit={this.handleSubmit}>
+                            <Form onSubmit={this.handleSubmit} className='sign_up_form'>
                                 <Form.Group>
                                     <Form.Control
                                         type="email"
                                         placeholder="Enter email"
-                                        id='rounded_input'
                                         name='email'
                                         value={this.state.email}
                                         onChange={this.handleChange}
@@ -63,7 +62,6 @@ class SplashPage extends Component {
                                     <Form.Control
                                         type="password"
                                         placeholder="Password"
-                                        id='rounded_input'
                                         name='password'
                                         value={this.state.password}
                                         onChange={this.handleChange} />
