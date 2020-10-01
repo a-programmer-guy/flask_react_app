@@ -14,14 +14,14 @@ export class Navigation extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="home">Home</Nav.Link>
                         <Nav.Link href="#about">About</Nav.Link>
                         <Nav.Link href="#products">Products</Nav.Link>
                         <Nav.Link href="#deals">Deals</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
-                        <Nav.Link href="#sign_in" >Sign In</Nav.Link>
-                        <Nav.Link href="#sign_up">Sign Up</Nav.Link>
+                        <Nav.Link href="sign_in" >Sign In</Nav.Link>
+                        <Nav.Link href="sign_up">Sign Up</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Navbar>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
 
+import Welcome from './Welcome'
+
 class SplashPage extends Component {
     constructor(props) {
         super(props);
@@ -39,10 +41,14 @@ class SplashPage extends Component {
             })
     }
     render() {
+        let welcome;
+        welcome = <Welcome />
         return (
+            <>
+            {welcome}
             <div>
                 <div className='splash_content'>
-                    <h1 className='mx-auto mb-4 white' >Sign In</h1>
+                    <h1 className='mx-auto mb-4' >Sign In</h1>
                     <Row>
                         <Col>
                             <Form onSubmit={this.handleSubmit} className='sign_up_form'>
@@ -74,6 +80,7 @@ class SplashPage extends Component {
                     </Row>
                 </div>
             </div>
+            </>
         )
     }
 }

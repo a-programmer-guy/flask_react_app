@@ -7,4 +7,5 @@ class Config(object):
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOAD_PATH =  'app/images'
-    ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+    IMAGE_EXTENSIONS = ['.pdf', '.png', '.jpg', '.jpeg', '.gif']
+    MAX_CONTENT_LENGTH = 10 * 1024 * 1024

@@ -65,7 +65,7 @@ class SignUp extends Component {
                             <Form.Label id='sign_in_label'>Name</Form.Label>
                                 <Row xs={1} md={1} lg={2}>
                                     <Col>
-                                        <Form.Control type="text" name='z' placeholder="First" onChange={this.handleChange}/>
+                                        <Form.Control type="text" name='first_name' placeholder="First" onChange={this.handleChange}/>
                                     </Col>
                                     <Col>
                                         <Form.Control type="text" name='last_name' placeholder="Last" onChange={this.handleChange}/>

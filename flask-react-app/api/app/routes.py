@@ -6,6 +6,16 @@ from sqlalchemy.exc import IntegrityError
 from app.dao.user_dao import UserRegistration
 from werkzeug.utils import secure_filename
 import os
+import imghdr
+
+def validate_image(stream):
+    header = stream.read(512)
+    stream.seek(0)
+    format = imghdr.what(None, header)
+    # import pdb; pdb.set_trace()
+    if not format:
+        return None
+    return '.' + (format)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -17,6 +27,8 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'GET':
+        return {"msg": "Welcome"}, 200
     data = request.get_json()
     # email = data['email']
     return jsonify(data)
@@ -44,10 +56,14 @@ def get_user():
 #     return '.' in filename and filename.rsplit('. ',1)[1].lower() in ALLOWED_EXTENTIONS
 
 def upload_file():
-    # if 'file' not in request.files:
-    #     return 400
+    if 'file' not in request.files:
+        return 400
     file_data = request.files['file']
     filename = secure_filename(file_data.filename)
-    if filename!= '':
-            file_data.save(os.path.join(app.config['UPLOAD_PATH'],file_data.filename))
-    return jsonify(file_data.filename)
+    if filename != '':
+        file_location = os.path.join(app.config['UPLOAD_PATH'], filename)
+        file_ext = os.path.splitext(filename)[1]
+        if file_ext not in app.config['IMAGE_EXTENSIONS'] or file_ext != validate_image(file_data.stream):
+            return 400
+        file_data.save(file_location)
+    return {"image_location" : file_location}
