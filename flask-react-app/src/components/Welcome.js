@@ -20,11 +20,7 @@ export class Welcome extends Component {
 
     render() {
         let login_button;
-        if (!this.state.authenticated) {
-            login_button = <LoginButton onClick={this.handleLoginClick}/>
-        } else {
-            login_button = <LogoutButton onClick={this.handleLogoutClick}/>
-        }
+        login_button = <LoginButton onClick={this.handleLoginClick}/>
         return (
             <div>
                 <h1>Welcome...please sign in to continue</h1>

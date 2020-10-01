@@ -8,14 +8,20 @@ class SplashPage extends Component {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            authenticated: false
         }
         // this.handleSubmit = this.handleSubmit.bind(this);
         // this.handleChange = this.handleChange.bind(this);
     }
+
     handleChange = (event) => {
         let { target: { name, value } } = event
         this.setState({ [name]: value, event: event })
+    }
+
+    handleLoginClick() {
+        this.setState({ authenticated: true });
     }
 
     parseJSON(response) {
@@ -42,45 +48,48 @@ class SplashPage extends Component {
     }
     render() {
         let welcome;
+        let authenticated = this.state.authenticated
         welcome = <Welcome />
         return (
             <>
-            {welcome}
-            <div>
-                <div className='splash_content'>
-                    <h1 className='mx-auto mb-4' >Sign In</h1>
-                    <Row>
-                        <Col>
-                            <Form onSubmit={this.handleSubmit} className='sign_up_form'>
-                                <Form.Group>
-                                    <Form.Control
-                                        type="email"
-                                        placeholder="Enter email"
-                                        name='email'
-                                        value={this.state.email}
-                                        onChange={this.handleChange}
-                                    />
-                                    <Form.Text className="text-muted">
-                                        We'll never share your email with anyone else.
-                                    </Form.Text>
-                                </Form.Group>
-                                <Form.Group>
-                                    <Form.Control
-                                        type="password"
-                                        placeholder="Password"
-                                        name='password'
-                                        value={this.state.password}
-                                        onChange={this.handleChange} />
-                                </Form.Group>
-                                <Button className='sign_in w-100' type="submit" >
-                                    Submit
-                                </Button>
-                            </Form>
-                        </Col>
-                    </Row>
+            {authenticated ?
+                { welcome }
+                :
+                <>
+                <div>
+                    <div className='splash_content'>
+                        <h1 className='mx-auto mb-4' >Sign In</h1>
+                        <Row>
+                            <Col>
+                                <Form onSubmit={this.handleSubmit} className='sign_up_form'>
+                                    <Form.Group>
+                                        <Form.Control
+                                            type="email"
+                                            placeholder="Enter email"
+                                            name='email'
+                                            value={this.state.email}
+                                            onChange={this.handleChange}
+                                        />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Control
+                                            type="password"
+                                            placeholder="Password"
+                                            name='password'
+                                            value={this.state.password}
+                                            onChange={this.handleChange} />
+                                    </Form.Group>
+                                    <Button className='sign_in w-100' type="submit" >
+                                        Submit
+                                    </Button>
+                                </Form>
+                            </Col>
+                        </Row>
+                    </div>
                 </div>
-            </div>
-            </>
+                </>
+            }
+        </>
         )
     }
 }
