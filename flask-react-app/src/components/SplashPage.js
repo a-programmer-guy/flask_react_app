@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
+import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router'
+
+import history  from './History'
 
 import Welcome from './Welcome'
 
@@ -9,10 +13,12 @@ class SplashPage extends Component {
         this.state = {
             email: '',
             password: '',
-            authenticated: false
+            authenticated: false,
+            sign_in: false
         }
         // this.handleSubmit = this.handleSubmit.bind(this);
         // this.handleChange = this.handleChange.bind(this);
+        this.handleSignInClick = this.handleSignInClick.bind(this);
     }
 
     handleChange = (event) => {
@@ -20,8 +26,8 @@ class SplashPage extends Component {
         this.setState({ [name]: value, event: event })
     }
 
-    handleLoginClick() {
-        this.setState({ authenticated: true });
+    handleSignInClick() {
+        this.setState({ sign_in: true });
     }
 
     parseJSON(response) {
@@ -41,21 +47,21 @@ class SplashPage extends Component {
             .then(this.parseJSON)
             .then(function(response) {
             console.log('request succeeded with JSON response',response)
+            history.push({
+                pathname: '/home',
+                state: { user: response}
+            })
             })
             .catch(function(error) {
                 console.log('request failed', error)
             })
     }
     render() {
-        let welcome;
         let authenticated = this.state.authenticated
-        welcome = <Welcome />
+        console.log('auth',this.state.authenticated)
         return (
             <>
-            {authenticated ?
-                { welcome }
-                :
-                <>
+                <Welcome handleSignInClick={this.handleSignInClick}/>
                 <div>
                     <div className='splash_content'>
                         <h1 className='mx-auto mb-4' >Sign In</h1>
@@ -87,11 +93,9 @@ class SplashPage extends Component {
                         </Row>
                     </div>
                 </div>
-                </>
-            }
         </>
         )
     }
 }
 
-export default SplashPage
+export default withRouter(SplashPage);

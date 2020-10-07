@@ -29,9 +29,12 @@ def register():
 def login():
     if request.method == 'GET':
         return {"msg": "Welcome"}, 200
-    data = request.get_json()
-    # email = data['email']
-    return jsonify(data)
+    if request.method == 'POST':
+        data = request.get_json()
+        email = data['email']
+        user = User.query.filter_by(email=email).first()
+        result = user_schema.dump(user)
+        return jsonify(result)
 
 @app.route('/users', methods=['GET', 'POST'])
 def list_users():

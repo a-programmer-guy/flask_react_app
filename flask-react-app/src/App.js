@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-
-
+import { Router, Switch, Route, Link, useHistory } from 'react-router-dom'
+import history from './components/History'
 
 // Components
 import Navigation from './components/Navbar'
@@ -11,16 +10,16 @@ import Footer from './components/Footer';
 import SignUp from './components/SignUp'
 import UploadImage from './components/UploadImage';
 import UserList from './components/UserList';
+import Home from './components/Home'
 
 // Contexts
 import ThemeContextProvider from './contexts/ThemeContext';
 import { Container } from 'react-bootstrap';
 
-
 function App() {
 
   return (
-    <Router>
+    <Router history={history}>
       <div className="App">
         <ThemeContextProvider>
         <Navigation />
@@ -28,8 +27,9 @@ function App() {
             <Switch>
               <Route exact path='/sign_up' component={SignUp} />
               <Route exact path='/upload' component={UploadImage} />
-              <Route exact path={['/', '/sign_in', '/home']} component={SplashPage} />
-              <Route exact path='users' component={UserList} />
+              <Route exact path={['/', '/sign_in']} component={SplashPage} />
+              <Route exact path='/users' component={UserList} />
+              <Route exact path='/home' component={Home} />
             </Switch>
           </Container>
           <Footer />

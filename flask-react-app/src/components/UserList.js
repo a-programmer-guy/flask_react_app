@@ -24,7 +24,7 @@ export class UserList extends Component {
                 <h1>User List</h1>
                 <ul>
                     {users.map((user, index) => {
-                        return <li key={index}>{user.last_name}</li>
+                        return <li key={index}>{user.email}</li>
                     })}
                 </ul>
             </div>

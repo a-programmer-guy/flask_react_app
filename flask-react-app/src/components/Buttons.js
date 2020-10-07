@@ -12,3 +12,9 @@ export function LogoutButton(props) {
         <Button variant='secondary' onClick={props.onClick}>Logout</Button>
     );
 }
+
+export function SignUpButton(props) {
+    return (
+        <Button variant='success' onClick={props.onClick}>Sign Up</Button>
+    );
+}

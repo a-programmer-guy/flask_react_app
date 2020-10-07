@@ -71,7 +71,7 @@ class SignUp extends Component {
                                         <Form.Control type="text" name='last_name' placeholder="Last" onChange={this.handleChange}/>
                                     </Col>
                                 </Row>
-                                <Row xs={1} md={1} lg={2}>
+                                {/* <Row xs={1} md={1} lg={2}>
                                     <Col>
                                     <Form.Label id='sign_in_label'>Birthdate</Form.Label>
                                         <Form.Control type="text" name='dob' placeholder="YYYY-MM-DD (e.g. 1999-12-31)"/>
@@ -86,7 +86,7 @@ class SignUp extends Component {
                                             <option value='n/a'>Prefer not to say</option>
                                         </Form.Control>
                                     </Col>
-                                </Row>
+                                </Row> */}
                                 <Form.Label id='sign_in_label'>Email</Form.Label>
                                 <Row>
                                     <Col>
