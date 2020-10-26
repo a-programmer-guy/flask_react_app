@@ -11,6 +11,7 @@ import SignUp from './components/SignUp'
 import UploadImage from './components/UploadImage';
 import UserList from './components/UserList';
 import Home from './components/Home'
+import Movie from './components/Movie'
 
 // Contexts
 import ThemeContextProvider from './contexts/ThemeContext';
@@ -30,6 +31,7 @@ function App() {
               <Route exact path={['/', '/sign_in']} component={SplashPage} />
               <Route exact path='/users' component={UserList} />
               <Route exact path='/home' component={Home} />
+              <Route exact path='/movie' component={Movie} />
             </Switch>
           </Container>
           <Footer />

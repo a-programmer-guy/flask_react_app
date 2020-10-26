@@ -36,20 +36,20 @@ class SplashPage extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        var ebody = JSON.stringify({
+        var body = JSON.stringify({
             email: this.state.email,
             password: this.state.password
         })
         fetch('/login', {
             method: 'POST',
             headers:{ 'Content-Type': 'application/json'},
-            body: ebody})
+            body: body })
             .then(this.parseJSON)
             .then(function(response) {
             console.log('request succeeded with JSON response',response)
             history.push({
                 pathname: '/home',
-                state: { user: response}
+                state: { user: response }
             })
             })
             .catch(function(error) {
