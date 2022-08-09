@@ -5,6 +5,8 @@ import { useHistory } from 'react-router'
 
 import history  from './History'
 
+import RandomUser from './RandomUserContext'
+
 import Welcome from './Welcome'
 
 class SplashPage extends Component {
@@ -20,6 +22,7 @@ class SplashPage extends Component {
         // this.handleChange = this.handleChange.bind(this);
         this.handleSignInClick = this.handleSignInClick.bind(this);
     }
+
 
     handleChange = (event) => {
         let { target: { name, value } } = event
@@ -58,13 +61,14 @@ class SplashPage extends Component {
     }
     render() {
         let authenticated = this.state.authenticated
-        console.log('auth',this.state.authenticated)
+        let person = this.context.value
+        console.log('person',person)
         return (
             <>
                 <Welcome handleSignInClick={this.handleSignInClick}/>
                 <div>
                     <div className='splash_content'>
-                        <h1 className='mx-auto mb-4' >Sign In</h1>
+                        <h1 className='mx-auto mb-4' >Sign In {person.name.first}</h1>
                         <Row>
                             <Col>
                                 <Form onSubmit={this.handleSubmit} className='sign_up_form'>
